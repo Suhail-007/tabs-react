@@ -75,9 +75,10 @@ function App() {
     
         <div className='job-cont'>
           <h2>{title}</h2>
-          <h3 className="company">{company}</h3>
+          <div className='h3'>
+            <h3 className="company">{company}</h3>
+          </div>
           <h4>{dates}</h4>
-    
           <div className="job-info">
            {jobDesc}
           </div>

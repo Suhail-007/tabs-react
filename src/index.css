@@ -38,7 +38,6 @@ main {
   font-weight: 500;
   letter-spacing: 1px;
   margin-bottom: 5rem;
-  /* overflow: hidden; */
   padding: 1rem;
 }
 
@@ -101,14 +100,6 @@ main {
 .two-col {
   display: block;
 }
-
-@media screen and (min-width: 48em) {
-  .two-col {
-    display: grid;
-    grid-template-columns: 14rem 1fr;
-  }
-}
-
 
 .btns-cont {
   margin-bottom: 1rem;
@@ -181,11 +172,14 @@ main {
   }
 }
 
-.job-cont>h3 {
+.job-cont>.h3 {
   font-size: 1.5rem;
   padding: .8rem 1.2rem;
   background: #DCDCDC;
   width: fit-content;
+}
+
+.job-cont h3 {
   font-weight: 500;
   letter-spacing: 1px;
 }
@@ -207,4 +201,42 @@ main {
 
 svg {
   fill: #A1A9FC;
+}
+
+@media screen and (min-width: 48em) {
+  html {
+    font-size: 100%;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 14rem 1fr;
+  }
+
+  .job-cont {
+    column-gap: 4rem;
+  }
+
+  .job-cont h2 {
+    animation: none;
+    opacity: 1;
+    scale: 1;
+    visibility: visible;
+    pointer-events: auto;
+    user-select: auto;
+    filter: none;
+  }
+
+  .jobs-btn.active-btn::before {
+    height: 80%;
+    width: .2rem;
+  }
+
+  .btns-cont {
+    flex-direction: column;
+    margin-bottom: 0;
+    justify-content: start;
+    row-gap: 2rem;
+  }
+
 }
