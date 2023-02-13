@@ -42,11 +42,25 @@ function App() {
     )
   }
 
+  if (error) {
+    return (
+      <main>
+        <section className='section'>
+          <p>
+            {error}, Refresh the page.
+          </p>
+        </section>
+      </main>
+    )
+  }
+
   const changeJob = function(value) {
     setIndex(value)
   }
 
   const { id, order, dates, title, duties, company } = jobs[index];
+
+  const jobDesc = duties.map(d => <p><span><FaAngleDoubleRight /></span>{d}</p>)
 
   const buttons = jobs.map((job, i) => <Button key={job.id} onClick={() => changeJob(i)} className={`jobs-btn ${index === i && 'active-btn'}`}>{job.company}</Button>);
 
@@ -65,11 +79,7 @@ function App() {
           <h4>{dates}</h4>
     
           <div className="job-info">
-           {duties.map(d =>
-           <p>
-            <span><FaAngleDoubleRight /></span>
-            {d}
-           </p>)}
+           {jobDesc}
           </div>
         </div>
       </section>
