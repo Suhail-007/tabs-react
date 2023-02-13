@@ -9,7 +9,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [jobs, setJobs] = useState([]);
   const [index, setIndex] = useState(0);
-  const [err, setError] = useState('');
+  const [error, setError] = useState('');
 
   useEffect(() => {
     fetchJobs();
